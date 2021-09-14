@@ -4,17 +4,15 @@ public class MoodAnalyzerTest {
 
     @Test
     public void MoodTest_Sad(){
-        String moodMessage = "I am in Sad mood";
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        moodAnalyzer.analyzeMood(moodMessage);
+        moodAnalyzer.analyzeMood("I am in Sad mood");
     }
 
     @Test
     public void MoodTest_Happy(){
-        String moodMessage = "I am in Any mood";
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        moodAnalyzer.analyzeMood(moodMessage);
+        moodAnalyzer.analyzeMood("I am in Any mood");
     }
 }

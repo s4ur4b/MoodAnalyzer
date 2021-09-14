@@ -1,9 +1,26 @@
 public class MoodAnalyzer {
 
-    public void analyzeMood(String message){
-        if (message.contains("Sad")){
-            System.out.println("SAD");
-        }else System.out.println("HAPPY");
+    private String message;
+
+    public MoodAnalyzer() {
     }
 
+    public MoodAnalyzer(String message) {
+        this.message = message;
+    }
+
+    //Handle NULLPOINTER Exception using try-catch block
+    public String analyzeMood() {
+
+        try {
+            if (message.contains("Sad")) {
+                return "SAD";
+            } else
+                return "HAPPY";
+
+        } catch (Exception e) {
+
+            return "Happy";
+        }
+    }
 }

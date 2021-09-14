@@ -10,17 +10,18 @@ public class MoodAnalyzer {
     }
 
     //Handle NULLPOINTER Exception using try-catch block
-    public String analyzeMood() {
+    public String analyzeMood() throws MoodAnalysisException {
 
         try {
+            if (message.length() == 0 )
+                throw new MoodAnalysisException(MoodAnalysisException.exceptionType.EMPTY,"Message cannot be empty");
             if (message.contains("Sad")) {
                 return "SAD";
             } else
                 return "HAPPY";
 
-        } catch (Exception e) {
-
-            return "Happy";
+        } catch (NullPointerException e) {
+            throw new MoodAnalysisException(MoodAnalysisException.exceptionType.NULL,"Message cannot be Null");
         }
     }
 }
